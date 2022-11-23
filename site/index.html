@@ -6,29 +6,34 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="crossorigin=""/>
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
   <div class="map" id="map">Map</div>
   <div class="filters">
     <div class="filter-field">
-        <div class="input-group">
-            <input id="voterFileInput" type="text" class="form-control" placeholder="Enter A List">
-            <span class="input-group-btn">
-                <button class="btn btn-default" id="voterFileLoadButton" type="button" onclick="loadList()">Load List</button>
-            </span>
-        </div>
-        <div class="lists-group" >
-            <div id="voterList" class="list-group"></div>
-        </div>
+      <label for="list-filter">List</label>
+      <input id="list-filter" value="3927">
+    </div>
+
+    <div class="filter-field">
+      <label for="date-filter">Date</label>
+      <input id="date-filter" type="date">
+    </div>
+
+    <div class="filter-field">
+      <label for="party-filter">Party</label>
+      <select id="party-filter">
+        <option value="">(All Parties)</option>
+      </select>
     </div>
 
    
 
     <div class="filter-summary">
       Listing <span class="filtered-count" id="filtered-count">...</span>
-      Neighbor(s) in <span class="filtered-file" id="filtered-file">...</span>
+      Neighbor(s) in <span class="filtered-precinct" id="filtered-precinct">...</span>
     </div>
   </div>
   <div class="neighbors">
@@ -42,7 +47,7 @@
     </ul>
   </div>
 
-  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+  <script src="https://unpkg.com/leaflet@1.9.1/dist/leaflet.js"integrity="sha256-NDI0K41gVbWqfkkaHj15IzU7PtMoelkzyKp8TOaFQ3s="crossorigin=""></script>
   <script src="https://unpkg.com/papaparse@5.3.2/papaparse.min.js"></script>
   <script src="js/tools.js"></script>
 
